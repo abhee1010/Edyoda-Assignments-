@@ -1,0 +1,24 @@
+Q1. Count the number of Salesperson whose name begin with ‘a’/’A’.
+
+Ans- SELECT COUNT (SNAME) FROM SalesPeople WHERE NAME LIKE 'A%'OR 'a%';
+
+
+Q2. Display all the Salesperson whose all orders worth is more than Rs. 2000. 
+
+Ans- SELECT SNAME FROM SALESPEOPLE S INNER JOIN ORDERS O ON S.SNUM = O.SNUM WHERE Amt > 2000;
+
+
+Q3. Count the number of Salesperson belonging to Newyork.
+
+Ans- SELECT COUNT (SNUM) FROM SalesPeople WHERE City = "NewYork";
+
+
+Q4. Display the number of Salespeople belonging to London and belonging to Paris.
+
+Ans- SELECT COUNT (SNUM) FROM SalesPeople WHERE City= "London" AND City = "Paris";
+
+
+Q5. Display the number of orders taken by each Salesperson and their date of orders.
+
+Ans- SELECT O.Onum, O.Odate, S.Sname FROM SALESPEOPLE S INNER JOIN ORDERS O ON O.Snum = S.Snum
+	ORDER BY S.Sname
